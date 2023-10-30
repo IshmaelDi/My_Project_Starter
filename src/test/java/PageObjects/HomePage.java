@@ -42,7 +42,9 @@ public class HomePage extends PageObject {
         Thread.sleep(3000);
     }
     @Step("Login in using AD account")
+
     public void loginIn(String Username, String password) {
+
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LoginBtn))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserNameXpath))).sendKeys(Username);
@@ -53,13 +55,17 @@ public class HomePage extends PageObject {
     }
 
     @Step("Navigate to sales page")
+
     public void captureSale()throws InterruptedException {
+
         Thread.sleep(5000);
         $(By.xpath(ClienteleLogoXpath)).click();
         $(By.xpath(CaptureSaleXpath)).click();
     }
     @Step("Navigate to lead page")
+
     public void clickLeadBasket() throws InterruptedException {
+
         Thread.sleep(5000);
         $(By.xpath(LeadBasketXpath)).click();
     }
